@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:icecore="http://www.icefaces.org/icefaces/core"
+	xmlns:ace="http://www.icefaces.org/icefaces/components"
+	xmlns:ice="http://www.icesoft.com/icefaces/component">
+<h:head>
+	<title>ICEfaces Registro</title>
+	<ice:outputStyle href="./xmlhttp/css/rime/rime.css" />
+</h:head>
+<h:body>
+	<ice:form id="iceForm">
+		<ace:panel header="Registro Usuarios">
+			<h:panelGrid columns="2">
+				<ice:outputLabel>Nombre:</ice:outputLabel>
+				<ice:inputText id="nombre" binding="#{nombre}"></ice:inputText>
+				<ice:outputLabel>Apellido:</ice:outputLabel>
+				<ice:inputText id="apellido" binding="#{apellido}"></ice:inputText>
+				<ice:outputLabel>Fecha de nacimiento:</ice:outputLabel>
+				<ace:dateTimeEntry id="fecha" binding="#{fecha}"
+					value="#{dateMinMaxBean.maxDate}" timeZone="Canada/Mountain"
+					pattern="dd/MMM/yyyy" navigator="true" readOnlyInputText="true"
+					renderAsPopup="true" mindate="#{dateMinMaxBean.minDate}"
+					maxdate="#{dateMinMaxBean.maxDate}" />
+					
+				<ice:outputLabel>Identificacion:</ice:outputLabel>
+				<ice:inputText id="identificacion" binding="#{identificacion}"></ice:inputText>
+				<ice:outputLabel>Telefono:</ice:outputLabel>
+				<ice:inputText id="telefono" binding="#{telefono}"></ice:inputText>
+				<ice:outputLabel>Correo:</ice:outputLabel>
+				<ice:inputText id="correo" binding="#{correo}"></ice:inputText>
+				<ice:outputLabel>Nombe usuario:</ice:outputLabel>
+				<ice:inputText id="username" binding="#{username}"></ice:inputText>
+				<ice:outputLabel>Contraseña:</ice:outputLabel>
+				<ice:inputSecret id="contraseña1" binding="#{contraseña1}"></ice:inputSecret>
+				<ice:outputLabel>Confirmar Contraseña:</ice:outputLabel>
+				<ice:inputSecret id="contraseña2" binding="#{contraseña2}"></ice:inputSecret>
+				<ace:pushButton actionListener="#{bdconection.ejecutar(nombre.value, apellido.value, fecha.value, identificacion.value, telefono.value, correo.value, username.value, contraseña1.value, contraseña2.value)}"
+					value="Prueba" />
+				<ace:linkButton id ="mostrar" value ="Mostrar" href="tabla.jsp "   actionListener = "#{bdconection.todasLasTuplas}"/>
+			</h:panelGrid>
+		</ace:panel>
+	</ice:form>
+</h:body>
+</html>

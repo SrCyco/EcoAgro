@@ -1,0 +1,9 @@
+<html>
+<head>
+</head>
+<body>
+	<%
+		response.sendRedirect("./dataTable.jsf");
+	%>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:icecore="http://www.icefaces.org/icefaces/core"
+	xmlns:ace="http://www.icefaces.org/icefaces/components"
+	xmlns:ice="http://www.icesoft.com/icefaces/component">
+<h:head>
+	<title>ICEfaces Ver Registros</title>
+	<ice:outputStyle href="./xmlhttp/css/rime/rime.css" />
+</h:head>
+<h:body>
+	<ace:panel header="Ver usuarios">
+		<h:panelGrid columns="1">
+			<h:form id="form">
+				<style type="text/css">
+/* Important required because row */
+.ui-datatable-odd {
+	background-color: lightgray !important;
+	background-position-y: -1400px; /* IE7 hack */
+}
+</style>
+
+				<ace:dataTable id="carTableRowExpansion" 
+					var="usuario" value="#{bdconection.lista}" rows="10">
+
+					<ace:column id="nombre">
+						<f:facet name="header">
+                       Nombre
+                    </f:facet>
+						<ace:cellEditor>
+							<f:facet name="output">
+								<h:outputText id="nombreCell" value="#{usuario.nombre}" />
+								
+							</f:facet>
+							<f:facet name="input">
+								<h:inputText id="nombreInput" value="#{usuario.nombre}"
+									style="width:90%" />
+							</f:facet>
+						</ace:cellEditor>
+					</ace:column>
+					<ace:column id="apellido">
+						<f:facet name="header">
+                       Apellido
+                    </f:facet>
+						<ace:cellEditor>
+							<f:facet name="output">
+								<h:outputText id="apellidoCell" value="#{usuario.apellido}" />
+                        </f:facet>
+							<f:facet name="input">
+								<h:inputText id="apellidoInput" value="#{usuario.apellido}"
+									style="width:90%" />lbs.
+                        </f:facet>
+						</ace:cellEditor>
+					</ace:column>
+					<ace:column id="fecha">
+						<f:facet name="header">
+                       Fecha
+                    </f:facet>
+						<ace:cellEditor>
+							<f:facet name="output">
+								<h:outputText id="fechaCell" value="#{usuario.fecha}" />
+							</f:facet>
+							<f:facet name="input">
+								<h:inputText id="fechaInput" value="#{usuario.fecha}"
+									style="width:90%" />
+							</f:facet>
+						</ace:cellEditor>
+					</ace:column>
+					<ace:column id="identificacion">
+						<f:facet name="header">
+                       Identificacion
+                    </f:facet>
+						<ace:cellEditor>
+							<f:facet name="output">
+								<h:outputText id="identificacionCell" value="#{usuario.identificacion}" />lbs.
+                        </f:facet>
+							<f:facet name="input">
+								<h:inputText id="identificacionInput" value="#{usuario.identificacion}"
+									style="width:90%" />lbs.
+                        </f:facet>
+						</ace:cellEditor>
+					</ace:column>
+					<ace:column id="telefono">
+						<f:facet name="header">
+                       Telefono
+                    </f:facet>
+						<ace:cellEditor>
+							<f:facet name="output">
+								<h:outputText id="telefonoCell" value="#{usuario.telefono}" />
+							</f:facet>
+							<f:facet name="input">
+								<h:inputText id="telefonoInput" value="#{usuario.telefono}"
+									style="width:90%" />
+							</f:facet>
+						</ace:cellEditor>
+					</ace:column>
+					<ace:column id="correo">
+						<f:facet name="header">
+                       Correo
+                    </f:facet>
+						<ace:cellEditor>
+							<f:facet name="output">
+								<h:outputText id="correoCell" value="#{usuario.correo}" />
+							</f:facet>
+							<f:facet name="input">
+								<h:inputText id="correoInput" value="#{usuario.correo}" style="width:90%" />
+							</f:facet>
+						</ace:cellEditor>
+					</ace:column>
+					<ace:column id="nickname">
+						<f:facet name="header">
+                       Nickname
+                    </f:facet>
+						<ace:cellEditor>
+							<f:facet name="output">
+								<h:outputText id="nicknameCell" value="#{usuario.nickname}" />
+							</f:facet>
+							<f:facet name="input">
+								<h:inputText id="nicknameInput" value="#{usuario.nickname}" style="width:90%" />
+							</f:facet>
+						</ace:cellEditor>
+					</ace:column>
+					<ace:column id="contraseña">
+						<f:facet name="header">
+                       Contraseña
+                    </f:facet>
+						<ace:cellEditor>
+							<f:facet name="output">
+								<h:outputText id="contraseñaCell" value="#{usuario.contraseña1}" />
+							</f:facet>
+							<f:facet name="input">
+								<h:inputText id="contraseñaInput" value="#{usuario.contraseña1}" style="width:90%" />
+							</f:facet>
+						</ace:cellEditor>
+					</ace:column>
+					<ace:column headerText="Edit">
+						<ace:rowEditor id="rowEdit" />
+					</ace:column>
+				</ace:dataTable>
+			</h:form>
+		</h:panelGrid>
+	</ace:panel>
+</h:body>
+</html>

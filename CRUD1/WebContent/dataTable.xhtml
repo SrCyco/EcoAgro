@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ace="http://www.icefaces.org/icefaces/components">
+	
+	<h:head>
+	<title>ICEfaces Ver Registros</title>
+	
+</h:head>
+<h:body>
+	<ace:panel header="Ver usuarios">
+		<h:panelGrid columns="1">
+			<h:form id="form">
+	
+		<ace:dataTable rows="10" value="#{bdconection.lista}" var="usuario">
+			<ace:column id="nombre" headerText="NOMBRE">
+				<h:outputText id="nombreCell" value="#{usuario.nombre}" />
+			</ace:column>
+			<ace:column id="Apellido" headerText="APELLIDO">
+				<h:outputText id="userNameCell" value="#{usuario.apellido}" />
+			</ace:column>
+			<ace:column id="fecha" headerText="FECHA">
+				<h:outputText id="passwordCell" value="#{usuario.fecha}" />
+			</ace:column>
+			<ace:column id="identificacion" headerText="IDENTIFICACION">
+				<h:outputText id="activationDateCell"
+					value="#{usuario.identificacion}" />
+			</ace:column>
+			<ace:column id="telefono" headerText="TELEFONO">
+				<h:outputText id="firstNameCell" value="#{usuario.telefono}" />
+			</ace:column>
+			<ace:column id="correo" headerText="CORREO">
+				<h:outputText id="lastNameCell" value="#{usuario.correo}" />
+			</ace:column>
+			<ace:column id="nickname" headerText="NICKNAME">
+				<h:outputText id="addressCell" value="#{usuario.nickname}" />
+			</ace:column>
+			<ace:column id="contraseña" headerText="CONTRASEÑA">
+				<h:outputText id="cityCell" value="#{usuario.contraseña}" />
+			</ace:column>
+			
+		</ace:dataTable>
+		
+	</h:form>
+	</h:panelGrid>
+	</ace:panel>
+	</h:body>
+</ui:composition>

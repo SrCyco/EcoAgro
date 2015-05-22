@@ -1,0 +1,9 @@
+<html>
+<head>
+</head>
+<body>
+	<%
+		response.sendRedirect("./mostrar.jsf");
+	%>
+</body>
+</html>
