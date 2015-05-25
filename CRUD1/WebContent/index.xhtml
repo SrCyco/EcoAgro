@@ -40,7 +40,7 @@
 				<ice:inputSecret id="contraseña2" binding="#{contraseña2}"></ice:inputSecret>
 				<ace:pushButton actionListener="#{bdconection.ejecutar(nombre.value, apellido.value, fecha.value, identificacion.value, telefono.value, correo.value, username.value, contraseña1.value, contraseña2.value)}"
 					value="Prueba" />
-				<ace:linkButton id ="mostrar" value ="Mostrar" href="tabla.jsp "   actionListener = "#{bdconection.todasLasTuplas}"/>
+				<ace:linkButton id ="mostrar" value ="Mostrar" href="mostrar.jsp "   actionListener = "#{bdconection.todasLasTuplas}"/>
 			</h:panelGrid>
 		</ace:panel>
 	</ice:form>

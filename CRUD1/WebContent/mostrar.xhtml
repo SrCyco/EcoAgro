@@ -23,8 +23,8 @@
 }
 </style>
 
-				<ace:dataTable id="carTableRowExpansion" 
-					var="usuario" value="#{bdconection.lista}" rows="10">
+				<ace:dataTable id="carTableRowExpansion" selectionMode="multiple"
+					var="usu" value="#{bdconection.lista}" rows="10">
 
 					<ace:column id="nombre">
 						<f:facet name="header">
@@ -32,11 +32,10 @@
                     </f:facet>
 						<ace:cellEditor>
 							<f:facet name="output">
-								<h:outputText id="nombreCell" value="#{usuario.nombre}" />
-								
+								<h:outputText id="nombreCell" value="#{usu.nombre}" />
 							</f:facet>
 							<f:facet name="input">
-								<h:inputText id="nombreInput" value="#{usuario.nombre}"
+								<h:inputText id="nombreInput" value="#{usu.nombre}"
 									style="width:90%" />
 							</f:facet>
 						</ace:cellEditor>
@@ -47,11 +46,11 @@
                     </f:facet>
 						<ace:cellEditor>
 							<f:facet name="output">
-								<h:outputText id="apellidoCell" value="#{usuario.apellido}" />
+								<h:outputText id="apellidoCell" value="#{usu.apellido}" />
                         </f:facet>
 							<f:facet name="input">
-								<h:inputText id="apellidoInput" value="#{usuario.apellido}"
-									style="width:90%" />lbs.
+								<h:inputText id="apellidoInput" value="#{usu.apellido}"
+									style="width:90%" />
                         </f:facet>
 						</ace:cellEditor>
 					</ace:column>
@@ -61,10 +60,10 @@
                     </f:facet>
 						<ace:cellEditor>
 							<f:facet name="output">
-								<h:outputText id="fechaCell" value="#{usuario.fecha}" />
+								<h:outputText id="fechaCell" value="#{usu.fecha}" />
 							</f:facet>
 							<f:facet name="input">
-								<h:inputText id="fechaInput" value="#{usuario.fecha}"
+								<h:inputText id="fechaInput" value="#{usu.fecha}"
 									style="width:90%" />
 							</f:facet>
 						</ace:cellEditor>
@@ -75,10 +74,10 @@
                     </f:facet>
 						<ace:cellEditor>
 							<f:facet name="output">
-								<h:outputText id="identificacionCell" value="#{usuario.identificacion}" />lbs.
+								<h:outputText id="identificacionCell" value="#{usu.identificacion}" />
                         </f:facet>
 							<f:facet name="input">
-								<h:inputText id="identificacionInput" value="#{usuario.identificacion}"
+								<h:inputText id="identificacionInput" value="#{usu.identificacion}"
 									style="width:90%" />lbs.
                         </f:facet>
 						</ace:cellEditor>
@@ -89,10 +88,10 @@
                     </f:facet>
 						<ace:cellEditor>
 							<f:facet name="output">
-								<h:outputText id="telefonoCell" value="#{usuario.telefono}" />
+								<h:outputText id="telefonoCell" value="#{usu.telefono}" />
 							</f:facet>
 							<f:facet name="input">
-								<h:inputText id="telefonoInput" value="#{usuario.telefono}"
+								<h:inputText id="telefonoInput" value="#{usu.telefono}"
 									style="width:90%" />
 							</f:facet>
 						</ace:cellEditor>
@@ -103,10 +102,10 @@
                     </f:facet>
 						<ace:cellEditor>
 							<f:facet name="output">
-								<h:outputText id="correoCell" value="#{usuario.correo}" />
+								<h:outputText id="correoCell" value="#{usu.correo}" />
 							</f:facet>
 							<f:facet name="input">
-								<h:inputText id="correoInput" value="#{usuario.correo}" style="width:90%" />
+								<h:inputText id="correoInput" value="#{usu.correo}" style="width:90%" />
 							</f:facet>
 						</ace:cellEditor>
 					</ace:column>
@@ -116,10 +115,10 @@
                     </f:facet>
 						<ace:cellEditor>
 							<f:facet name="output">
-								<h:outputText id="nicknameCell" value="#{usuario.nickname}" />
+								<h:outputText id="nicknameCell" value="#{usu.nickname}" />
 							</f:facet>
 							<f:facet name="input">
-								<h:inputText id="nicknameInput" value="#{usuario.nickname}" style="width:90%" />
+								<h:inputText id="nicknameInput" value="#{usu.nickname}" style="width:90%" />
 							</f:facet>
 						</ace:cellEditor>
 					</ace:column>
@@ -129,10 +128,10 @@
                     </f:facet>
 						<ace:cellEditor>
 							<f:facet name="output">
-								<h:outputText id="contraseñaCell" value="#{usuario.contraseña1}" />
+								<h:outputText id="contraseñaCell" value="#{usu.contraseña1}" />
 							</f:facet>
 							<f:facet name="input">
-								<h:inputText id="contraseñaInput" value="#{usuario.contraseña1}" style="width:90%" />
+								<h:inputText id="contraseñaInput" value="#{usu.contraseña1}" style="width:90%" />
 							</f:facet>
 						</ace:cellEditor>
 					</ace:column>

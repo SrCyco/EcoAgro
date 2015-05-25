@@ -1,9 +1,0 @@
-<html>
-<head>
-</head>
-<body>
-	<%
-		response.sendRedirect("./tabla.jsf");
-	%>
-</body>
-</html>

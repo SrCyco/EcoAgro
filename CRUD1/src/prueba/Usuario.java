@@ -9,9 +9,7 @@ import javax.faces.bean.ViewScoped;
 @ViewScoped
 
 public class Usuario implements Serializable {
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1940966339053470935L;
 	private String nombre;
 	private String apellido;
