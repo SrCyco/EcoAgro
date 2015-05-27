@@ -23,9 +23,9 @@
 }
 </style>
 
-				<ace:dataTable id="carTableRowExpansion" selectionMode="multiple"
-					var="usu" value="#{bdconection.lista}" rows="10">
-
+				<ace:dataTable id="tablaUsuarios" selectionMode="multiple" var="usu"
+					value="#{bdconection.lista}">
+					<ace:ajax execute ="@all" render="tablaUsuarios" />
 					<ace:column id="nombre">
 						<f:facet name="header">
                        Nombre
@@ -36,7 +36,7 @@
 							</f:facet>
 							<f:facet name="input">
 								<h:inputText id="nombreInput" value="#{usu.nombre}"
-									style="width:90%" />
+									style="width:90%" binding="#{nombre}" />
 							</f:facet>
 						</ace:cellEditor>
 					</ace:column>
@@ -47,11 +47,11 @@
 						<ace:cellEditor>
 							<f:facet name="output">
 								<h:outputText id="apellidoCell" value="#{usu.apellido}" />
-                        </f:facet>
+							</f:facet>
 							<f:facet name="input">
 								<h:inputText id="apellidoInput" value="#{usu.apellido}"
-									style="width:90%" />
-                        </f:facet>
+									style="width:90%" binding="#{apellido}" />
+							</f:facet>
 						</ace:cellEditor>
 					</ace:column>
 					<ace:column id="fecha">
@@ -64,7 +64,7 @@
 							</f:facet>
 							<f:facet name="input">
 								<h:inputText id="fechaInput" value="#{usu.fecha}"
-									style="width:90%" />
+									style="width:90%" binding="#{fecha}" />
 							</f:facet>
 						</ace:cellEditor>
 					</ace:column>
@@ -74,12 +74,14 @@
                     </f:facet>
 						<ace:cellEditor>
 							<f:facet name="output">
-								<h:outputText id="identificacionCell" value="#{usu.identificacion}" />
-                        </f:facet>
+								<h:outputText id="identificacionCell"
+									value="#{usu.identificacion}" />
+							</f:facet>
 							<f:facet name="input">
-								<h:inputText id="identificacionInput" value="#{usu.identificacion}"
-									style="width:90%" />lbs.
-                        </f:facet>
+								<h:inputText id="identificacionInput"
+									value="#{usu.identificacion}" style="width:90%"
+									binding="#{identificacion}" />
+							</f:facet>
 						</ace:cellEditor>
 					</ace:column>
 					<ace:column id="telefono">
@@ -92,7 +94,7 @@
 							</f:facet>
 							<f:facet name="input">
 								<h:inputText id="telefonoInput" value="#{usu.telefono}"
-									style="width:90%" />
+									style="width:90%" binding="#{telefono}" />
 							</f:facet>
 						</ace:cellEditor>
 					</ace:column>
@@ -105,22 +107,14 @@
 								<h:outputText id="correoCell" value="#{usu.correo}" />
 							</f:facet>
 							<f:facet name="input">
-								<h:inputText id="correoInput" value="#{usu.correo}" style="width:90%" />
+								<h:inputText id="correoInput" value="#{usu.correo}"
+									style="width:90%" binding="#{correo}" />
 							</f:facet>
 						</ace:cellEditor>
 					</ace:column>
-					<ace:column id="nickname">
-						<f:facet name="header">
-                       Nickname
-                    </f:facet>
-						<ace:cellEditor>
-							<f:facet name="output">
-								<h:outputText id="nicknameCell" value="#{usu.nickname}" />
-							</f:facet>
-							<f:facet name="input">
-								<h:inputText id="nicknameInput" value="#{usu.nickname}" style="width:90%" />
-							</f:facet>
-						</ace:cellEditor>
+					<ace:column id="nickname" headerText="Nickname">
+						<h:outputText id="nicknameCell" value="#{usu.nickname}"
+							binding="#{nickname}" />
 					</ace:column>
 					<ace:column id="contraseña">
 						<f:facet name="header">
@@ -131,12 +125,20 @@
 								<h:outputText id="contraseñaCell" value="#{usu.contraseña1}" />
 							</f:facet>
 							<f:facet name="input">
-								<h:inputText id="contraseñaInput" value="#{usu.contraseña1}" style="width:90%" />
+								<h:inputText id="contraseñaInput" value="#{usu.contraseña1}"
+									style="width:90%" binding="#{contrasena}" />
 							</f:facet>
 						</ace:cellEditor>
 					</ace:column>
-					<ace:column headerText="Edit">
-						<ace:rowEditor id="rowEdit" />
+					<ace:column headerText="Editar">
+						<ace:rowEditor id="rowEdit"
+							rowEditListener="#{bdconection.actualizar(nombre.value, apellido.value, fecha.value, identificacion.value, telefono.value, correo.value, contrasena.value, nickname.value)}" />
+					</ace:column>
+					<ace:column id="eliminar" headerText="Eliminar">
+
+						<ace:pushButton id="eliminarBtn" value="eliminar"
+							actionListener="#{bdconection.eliminar(nickname.value)}" />
+
 					</ace:column>
 				</ace:dataTable>
 			</h:form>

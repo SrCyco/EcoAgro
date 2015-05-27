@@ -38,7 +38,7 @@
 				<ice:inputSecret id="contraseña1" binding="#{contraseña1}"></ice:inputSecret>
 				<ice:outputLabel>Confirmar Contraseña:</ice:outputLabel>
 				<ice:inputSecret id="contraseña2" binding="#{contraseña2}"></ice:inputSecret>
-				<ace:pushButton actionListener="#{bdconection.ejecutar(nombre.value, apellido.value, fecha.value, identificacion.value, telefono.value, correo.value, username.value, contraseña1.value, contraseña2.value)}"
+				<ace:linkButton actionListener="#{bdconection.ejecutar(nombre.value, apellido.value, fecha.value, identificacion.value, telefono.value, correo.value, username.value, contraseña1.value, contraseña2.value)}"
 					value="Prueba" />
 				<ace:linkButton id ="mostrar" value ="Mostrar" href="mostrar.jsp "   actionListener = "#{bdconection.todasLasTuplas}"/>
 			</h:panelGrid>
