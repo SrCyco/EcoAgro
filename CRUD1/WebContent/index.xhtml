@@ -12,8 +12,14 @@
 	<ice:outputStyle href="./xmlhttp/css/rime/rime.css" />
 </h:head>
 <h:body>
+
 	<ice:form id="iceForm">
-		<ace:panel header="Registro Usuarios">
+		<ice:graphicImage id="baner" url="img/baner.jpg"/>
+
+		<ace:panel style="text-align: center">
+			<ice:outputLabel id="titulo">Formulario registro de usuarios</ice:outputLabel>
+		</ace:panel>
+		<ace:panel>
 			<h:panelGrid columns="2">
 				<ice:outputLabel>Nombre:</ice:outputLabel>
 				<ice:inputText id="nombre" binding="#{nombre}"></ice:inputText>
@@ -25,7 +31,7 @@
 					pattern="dd/MMM/yyyy" navigator="true" readOnlyInputText="true"
 					renderAsPopup="true" mindate="#{dateMinMaxBean.minDate}"
 					maxdate="#{dateMinMaxBean.maxDate}" />
-					
+
 				<ice:outputLabel>Identificacion:</ice:outputLabel>
 				<ice:inputText id="identificacion" binding="#{identificacion}"></ice:inputText>
 				<ice:outputLabel>Telefono:</ice:outputLabel>
@@ -38,9 +44,17 @@
 				<ice:inputSecret id="contraseña1" binding="#{contraseña1}"></ice:inputSecret>
 				<ice:outputLabel>Confirmar Contraseña:</ice:outputLabel>
 				<ice:inputSecret id="contraseña2" binding="#{contraseña2}"></ice:inputSecret>
-				<ace:linkButton actionListener="#{bdconection.ejecutar(nombre.value, apellido.value, fecha.value, identificacion.value, telefono.value, correo.value, username.value, contraseña1.value, contraseña2.value)}"
-					value="Prueba" />
-				<ace:linkButton id ="mostrar" value ="Mostrar" href="mostrar.jsp "   actionListener = "#{bdconection.todasLasTuplas}"/>
+
+			</h:panelGrid>
+
+		</ace:panel>
+		<ace:panel>
+			<h:panelGrid columns ="2">
+				<ace:linkButton id="registrar"
+					actionListener="#{bdconection.ejecutar(nombre.value, apellido.value, fecha.value, identificacion.value, telefono.value, correo.value, username.value, contraseña1.value, contraseña2.value)}"
+					value="Registrar" />
+				<ace:linkButton id="mostrar" value="Mostrar" href="mostrar.jsp "
+					actionListener="#{bdconection.todasLasTuplas}" />
 			</h:panelGrid>
 		</ace:panel>
 	</ice:form>

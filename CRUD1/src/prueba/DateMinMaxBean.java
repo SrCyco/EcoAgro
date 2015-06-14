@@ -15,6 +15,7 @@ public class DateMinMaxBean implements Serializable {
 	private Date selectedDate = new Date(System.currentTimeMillis());
 	private Date minDate = new Date(System.currentTimeMillis());
 	private Date maxDate = new Date(System.currentTimeMillis());
+	private Date selectDate = new Date(System.currentTimeMillis());
 
 	public DateMinMaxBean() {
 		Calendar calendar = Calendar.getInstance();
@@ -37,7 +38,7 @@ public class DateMinMaxBean implements Serializable {
         selectedDate = calendar.getTime();
 
 	}
-
+	
 	public Date getSelectedDate() {
 		return selectedDate;
 	}

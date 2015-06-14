@@ -2,13 +2,16 @@ package prueba;
 
 import java.awt.List;
 import java.io.Serializable;
+import java.io.ObjectInputStream.GetField;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collection;
+import java.util.Date;
 import java.util.LinkedList;
 
 import javax.faces.bean.ManagedBean;
@@ -26,6 +29,7 @@ public class BDConection implements Serializable {
 	private Connection conexion;
 	private ArrayList<Usuario> lista;
 	private List evento;
+	private Date selectDate = new Date(System.currentTimeMillis());
 
 	/**
 	 * Este es el contructor de la clase crea una conexion llamando al driver de
